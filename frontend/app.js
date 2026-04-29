@@ -1,4 +1,4 @@
-const API = 'http://localhost:8000/api';
+const API = '/api';
 
 // ── Utilities ──────────────────────────────────────────────────────────────
 function $(id) { return document.getElementById(id); }
@@ -41,7 +41,7 @@ async function checkHealth() {
   const dot = $('status-dot');
   const txt = $('status-text');
   try {
-    const r = await fetch('http://localhost:8000/health');
+    const r = await fetch('/health');
     if (r.ok) {
       dot.className = 'status-dot online';
       txt.textContent = 'API Online';

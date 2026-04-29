@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from fastapi.responses import RedirectResponse
+from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
 from contextlib import asynccontextmanager
 from app.db.database import engine, Base
@@ -20,17 +21,15 @@ app = FastAPI(title="AI Decision & Automation Platform", lifespan=lifespan)
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://127.0.0.1:3000"],
+    allow_origins=["*"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
 app.include_router(router, prefix="/api")
 
-@app.get("/", include_in_schema=False)
-def root():
-    return RedirectResponse(url="/docs")
-
 @app.get("/health")
 def health_check():
     return {"status": "ok", "service": "AI Decision & Automation Platform", "version": "1.0.0"}
+
+app.mount("/", StaticFiles(directory="frontend", html=True), name="frontend")
