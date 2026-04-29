@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+sqlalchemy
+pymysql
+pydantic
+pydantic-settings
+faiss-cpu
+sentence-transformers
+groq
+pytest
+httpx
+pytest-asyncio

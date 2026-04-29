@@ -1,0 +1,172 @@
+﻿python : Traceback (most recent 
+call last):
+At line:1 char:1
++ python -c "import httpx; print(ht
+tpx.get('http://127.0.0.1:8000/heal
+t ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~
+    + CategoryInfo          : NotS 
+   pecified: (Traceback (most rec  
+  ent call last)::String) [], Re   
+ moteException
+    + FullyQualifiedErrorId : Nati 
+   veCommandError
+ 
+  File "C:\Users\Asus\Desktop\proje
+ct\venv\Lib\site-packages\httpx\_tr
+ansports\default.py", line 101, in 
+map_httpcore_exceptions
+    yield
+  File "C:\Users\Asus\Desktop\proje
+ct\venv\Lib\site-packages\httpx\_tr
+ansports\default.py", line 250, in 
+handle_request
+    resp = 
+self._pool.handle_request(req)
+  File "C:\Users\Asus\Desktop\proje
+ct\venv\Lib\site-packages\httpcore\
+_sync\connection_pool.py", line 
+256, in handle_request
+    raise exc from None
+  File "C:\Users\Asus\Desktop\proje
+ct\venv\Lib\site-packages\httpcore\
+_sync\connection_pool.py", line 
+236, in handle_request
+    response = 
+connection.handle_request(
+        pool_request.request
+    )
+  File "C:\Users\Asus\Desktop\proje
+ct\venv\Lib\site-packages\httpcore\
+_sync\connection.py", line 101, in 
+handle_request
+    raise exc
+  File "C:\Users\Asus\Desktop\proje
+ct\venv\Lib\site-packages\httpcore\
+_sync\connection.py", line 78, in 
+handle_request
+    stream = self._connect(request)
+  File "C:\Users\Asus\Desktop\proje
+ct\venv\Lib\site-packages\httpcore\
+_sync\connection.py", line 124, in 
+_connect
+    stream = self._network_backend.
+connect_tcp(**kwargs)
+  File "C:\Users\Asus\Desktop\proje
+ct\venv\Lib\site-packages\httpcore\
+_backends\sync.py", line 207, in 
+connect_tcp
+    with map_exceptions(exc_map):
+         ~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Program Files\Python313\
+Lib\contextlib.py", line 162, in 
+__exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\Asus\Desktop\proje
+ct\venv\Lib\site-packages\httpcore\
+_exceptions.py", line 14, in 
+map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [WinError 
+10061] No connection could be made 
+because the target machine 
+actively refused it
+
+The above exception was the direct 
+cause of the following exception:
+
+Traceback (most recent call last):
+  File "<string>", line 1, in 
+<module>
+    import httpx; print(httpx.get('
+http://127.0.0.1:8000/health').json
+())
+                        ~~~~~~~~~^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\Desktop\proje
+ct\venv\Lib\site-packages\httpx\_ap
+i.py", line 195, in get
+    return request(
+        "GET",
+    ...<9 lines>...
+        trust_env=trust_env,
+    )
+  File "C:\Users\Asus\Desktop\proje
+ct\venv\Lib\site-packages\httpx\_ap
+i.py", line 109, in request
+    return client.request(
+           ~~~~~~~~~~~~~~^
+        method=method,
+        ^^^^^^^^^^^^^^
+    ...<8 lines>...
+        
+follow_redirects=follow_redirects,
+        
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Asus\Desktop\proje
+ct\venv\Lib\site-packages\httpx\_cl
+ient.py", line 825, in request
+    return self.send(request, 
+auth=auth, 
+follow_redirects=follow_redirects)
+           ~~~~~~~~~^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^
+  File "C:\Users\Asus\Desktop\proje
+ct\venv\Lib\site-packages\httpx\_cl
+ient.py", line 914, in send
+    response = 
+self._send_handling_auth(
+        request,
+    ...<2 lines>...
+        history=[],
+    )
+  File "C:\Users\Asus\Desktop\proje
+ct\venv\Lib\site-packages\httpx\_cl
+ient.py", line 942, in 
+_send_handling_auth
+    response = 
+self._send_handling_redirects(
+        request,
+        
+follow_redirects=follow_redirects,
+        history=history,
+    )
+  File "C:\Users\Asus\Desktop\proje
+ct\venv\Lib\site-packages\httpx\_cl
+ient.py", line 979, in 
+_send_handling_redirects
+    response = 
+self._send_single_request(request)
+  File "C:\Users\Asus\Desktop\proje
+ct\venv\Lib\site-packages\httpx\_cl
+ient.py", line 1014, in 
+_send_single_request
+    response = 
+transport.handle_request(request)
+  File "C:\Users\Asus\Desktop\proje
+ct\venv\Lib\site-packages\httpx\_tr
+ansports\default.py", line 249, in 
+handle_request
+    with map_httpcore_exceptions():
+         ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Program Files\Python313\
+Lib\contextlib.py", line 162, in 
+__exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\Asus\Desktop\proje
+ct\venv\Lib\site-packages\httpx\_tr
+ansports\default.py", line 118, in 
+map_httpcore_exceptions
+    raise mapped_exc(message) from 
+exc
+httpx.ConnectError: [WinError 
+10061] No connection could be made 
+because the target machine 
+actively refused it

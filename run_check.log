@@ -1,0 +1,18 @@
+﻿python : Traceback (most recent call last):
+At line:1 char:1
++ python -c "import main; print('Import OK')" *>&1 | Out-File run_check ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (most recent call last)::String) [], Rem 
+   oteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  File "<string>", line 1, in <module>
+    import main; print('Import OK')
+    ^^^^^^^^^^^
+  File "C:\Users\Asus\Desktop\project\main.py", line 6, in <module>
+    from app.engine.workflow_engine import workflow_engine
+  File "C:\Users\Asus\Desktop\project\app\engine\workflow_engine.py", line 5, in <module>
+    from app.engine.rag_engine import rag_engine
+  File "C:\Users\Asus\Desktop\project\app\engine\rag_engine.py", line 4, in <module>
+    from sentence_transformers import SentenceTransformer
+ModuleNotFoundError: No module named 'sentence_transformers'
