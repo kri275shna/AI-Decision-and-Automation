@@ -1,13 +1,15 @@
 import os
 import faiss
 import numpy as np
+import torch
+torch.set_num_threads(1)
 from sentence_transformers import SentenceTransformer
 
 class RAGEngine:
     def __init__(self):
         self.dimension = 384
         self.index = faiss.IndexFlatL2(self.dimension)
-        self.model = SentenceTransformer('all-MiniLM-L6-v2')
+        self.model = SentenceTransformer('all-MiniLM-L6-v2', device='cpu')
         self.documents = []
         
         self._initialize_knowledge_base()
